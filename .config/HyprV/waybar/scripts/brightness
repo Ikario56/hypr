@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+iDIR="$HOME/.config/HyprV/mako/icons"
+
+# Get brightness
+get_backlight() {
+	LIGHT=$(printf "%.0f\n" $(brightnessctl i))
+	echo "${LIGHT}%"
+}
+
+# Get icons
+get_icon() {
+	backlight="$(brightnessctl g)"
+	current="${backlight%%%}"
+	if [[ ("$current" -ge "0") && ("$current" -le "304") ]]; then
+		icon="$iDIR/brightness-20.png"
+	elif [[ ("$current" -ge "304") && ("$current" -le "608") ]]; then
+		icon="$iDIR/brightness-40.png"
+	elif [[ ("$current" -ge "608") && ("$current" -le "912") ]]; then
+		icon="$iDIR/brightness-60.png"
+	elif [[ ("$current" -ge "912") && ("$current" -le "1216") ]]; then
+		icon="$iDIR/brightness-80.png"
+	elif [[ ("$current" -ge "1216") && ("$current" -le "1540") ]]; then
+		icon="$iDIR/brightness-100.png"
+	fi
+}
+
+# Notify
+notify_user() {
+	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$icon" " $(brightnessctl g)"
+}
+
+# Increase brightness
+inc_backlight() {
+	brightnessctl set 5%+ && get_icon && notify_user
+}
+
+# Decrease brightness
+dec_backlight() {
+	brightnessctl set 5%- && get_icon && notify_user
+}
+
+# Execute accordingly
+if [[ "$1" == "--get" ]]; then
+	brightnessctl g
+elif [[ "$1" == "--inc" ]]; then
+	inc_backlight
+elif [[ "$1" == "--dec" ]]; then
+	dec_backlight
+else
+	get_backlight
+fi

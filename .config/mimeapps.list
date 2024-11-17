@@ -1,0 +1,15 @@
+[Added Associations]
+text/plain=org.gnome.gedit.desktop;org.xfce.mousepad.desktop;
+application/x-zerosize=org.xfce.mousepad.desktop;
+inode/symlink=org.gnome.gedit.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;org.xfce.mousepad.desktop;
+text/x-csrc=org.gnome.gedit.desktop;
+image/jpeg=org.xfce.ristretto.desktop;swappy.desktop;firefox.desktop;
+application/json=org.gnome.gedit.desktop;
+image/png=org.xfce.ristretto.desktop;
+application/x-fictionbook+xml=FBReader.desktop;org.gnome.Evince.desktop;okularApplication_fb.desktop;
+application/pdf=org.gnome.Evince.desktop;
+image/svg+xml=org.xfce.ristretto.desktop;
+
+[Default Applications]
+inode/symlink=org.gnome.gedit.desktop

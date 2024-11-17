@@ -1,0 +1,22 @@
+[Desktop Entry]
+FullScreen=false
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
+
+[General]
+LockSidebar=true
+ShowSidebar=false
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Print Preview]
+1920x1080 screen: Window-Maximized=true
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/Telegram Desktop/Klir_D_Atomnye_privychki._Kak_priobresti_xoroshie_pr.573185.fb2
+Name1[$e]=Klir_D_Atomnye_privychki._Kak_priobresti_xoroshie_pr.573185.fb2
+
+[UiSettings]
+ColorScheme=Breeze, тёмный вариант
